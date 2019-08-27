@@ -1,3 +1,6 @@
 # Files
 *.txt
 t*.md
+
+# Directories
+node_modules/
