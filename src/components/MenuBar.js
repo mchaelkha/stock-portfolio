@@ -59,17 +59,17 @@ export default function MenuBar({exchanges, setExchanges}) {
           <Settings />
         </IconButton>
       </div>
-      { showMenu && 
+      { showMenu &&
         <div className="left-menu-bar">
-          <a href="https://github.com/mxk5025/Stock-Portfolio#stock-portfolio">About</a>
+          <a href="https://github.com/mxk5025/Stock-Portfolio#stock-portfolio" target="_blank" rel="noopener noreferrer">About</a>
           <span id="help" onClick={handleHelpClick}>{ showHelp ? altHelpText : defaultHelpText }</span>
           { showHelp &&
             <div className="text-container">
               <p id="help-text">{defaultHelpDescription}</p>
             </div>
           }
-          <a href="https://github.com/mxk5025/Stock-Portfolio/issues">Feedback</a>
-          <a href="https://github.com/mxk5025/">Contact</a>
+          <a href="https://github.com/mxk5025/Stock-Portfolio/issues" target="_blank" rel="noopener noreferrer">Feedback</a>
+          <a href="https://github.com/mxk5025/" target="_blank" rel="noopener noreferrer">Contact</a>
         </div>
       }
       { showSettings &&
@@ -80,7 +80,7 @@ export default function MenuBar({exchanges, setExchanges}) {
               { showExchanges ? altExchangeText : defaultExchangeText }
             </FormLabel>
             { showExchanges &&
-              <FormGroup onChange={handleCheckChange} 
+              <FormGroup onChange={handleCheckChange}
                 style={{ paddingTop: '-5px', paddingLeft: '15px', marginTop: '-5px', marginLeft: '15%', border: '1px', borderLeftStyle: 'solid', borderColor: 'rgba(0, 0, 0, 0.54)', backgroundColor: '#ddf4f7' }}
               >
                 {

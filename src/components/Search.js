@@ -32,14 +32,14 @@ async function update(sym, add) {
   data.latestPrice = isNullOrUndefined(data.latestPrice) ? quote.data.latestPrice : data.latestPrice;
 
   // If still missing values
-  if (isNullOrUndefined(data.open) || isNullOrUndefined(data.high) || 
-      isNullOrUndefined(data.close) || isNullOrUndefined(data.low) || 
+  if (isNullOrUndefined(data.open) || isNullOrUndefined(data.high) ||
+      isNullOrUndefined(data.close) || isNullOrUndefined(data.low) ||
       isNullOrUndefined(data.companyName) || isNullOrUndefined(data.latestPrice) ||
       isNullOrUndefined(data.change) || isNullOrUndefined(data.changePercent)) {
     // console.log(prev.data);
     // console.log(quote.data);
     console.log("[INFO] Unavailable; missing some data.");
-  } 
+  }
   add(data, true);
 }
 
@@ -71,9 +71,9 @@ const SearchItem = ({name, sym, add, hide}) => (
       update(sym, add);
       hide();
     }}
-    
+
   >
-  <b>{sym}</b> - {name} 
+  <b>{sym}</b> - {name}
   </li>
 )
 
@@ -101,29 +101,6 @@ export default function Search({add, exchanges}) {
     searchForm.current.style.gridTemplateRows = '24pt auto';
   }
 
-  // mousedown event
-  const handleClick = (e) => {
-    if (searchBar.current.contains(e.target)) {
-      if (e.target.value !== '') {
-        showResults();
-      }
-      return;
-    }
-    if (searchResults.current.contains(e.target)) {
-      if (searchBar.current.placeholder === '') {
-        searchBar.current.placeholder = defaultPlaceHolder;
-      } 
-      if (searchBar.current.value !== '') {
-        console.log(searchBar.current);
-        searchBar.current.value = '';
-      }
-    }
-    if (!searchForm.current.contains(e.target)) {
-      searchBar.current.placeholder = defaultPlaceHolder;
-      hideResults();
-    }
-  }
-
   const handleSearchInput = (e) => {
     setQuery(e.target.value);
     const fuseResults = fuse.search(e.target.value.trim());
@@ -147,6 +124,29 @@ export default function Search({add, exchanges}) {
 
   // Event listeners
   useEffect(() => {
+    // mousedown event
+    const handleClick = (e) => {
+      if (searchBar.current.contains(e.target)) {
+        if (e.target.value !== '') {
+          showResults();
+        }
+        return;
+      }
+      if (searchResults.current.contains(e.target)) {
+        if (searchBar.current.placeholder === '') {
+          searchBar.current.placeholder = defaultPlaceHolder;
+        }
+        if (searchBar.current.value !== '') {
+          console.log(searchBar.current);
+          searchBar.current.value = '';
+        }
+      }
+      if (!searchForm.current.contains(e.target)) {
+        searchBar.current.placeholder = defaultPlaceHolder;
+        hideResults();
+      }
+    }
+
     initIndex(exchanges);
     document.addEventListener('mousedown', handleClick);
     return () => {
@@ -178,7 +178,7 @@ export default function Search({add, exchanges}) {
         <ul ref={searchResults}>
           {
             results.map(
-              result => 
+              result =>
                 <SearchItem
                   key={result.symbol}
                   name={result.name}

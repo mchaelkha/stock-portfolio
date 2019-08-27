@@ -13,16 +13,7 @@ import materialDesignIcon from '@iconify/icons-simple-icons/materialdesign';
 import simpleIconsIcon from '@iconify/icons-simple-icons/simpleicons';
 import iexCloudLogo from '../images/logo-black.svg';
 import lodashLogo from '../images/lodash.svg';
-
 import './PortfolioFooter.css';
-
-// <a href="#"></a>
-// <a href="#"></a>
-// <a href="#"></a>
-// <a href="#"></a>
-// <a href="#"></a>
-// <a href="#"></a>
-// <a href="#"></a>
 
 const defaultWidth = 24;
 const defaultHeight = 24;
@@ -35,7 +26,7 @@ export default function PortfolioFooter() {
       <div className="link-container">
         <a href="https://iexcloud.io" target="_blank" rel="noopener noreferrer"><img id="iex-cloud-logo" src={iexCloudLogo} alt="" /></a>
         <div className="show-stack-container">
-          <a href="#"><Icon width={defaultWidth} height={defaultHeight} icon={gitHubIcon} /></a>
+          <a href="https://github.com/mxk5025/Stock-Portfolio" target="_blank" rel="noopener noreferrer"><Icon width={defaultWidth} height={defaultHeight} icon={gitHubIcon} /></a>
           <IconButton size="small" onClick={() => {setShowStack(showStack ? false : true)}}>
             { showStack ?
               <ArrowDropUp /> : <ArrowDropDown />
@@ -45,7 +36,7 @@ export default function PortfolioFooter() {
       </div>
       <div className="footer-end">
         <span>&copy; 2019 Michael Kha. All Rights Reserved.</span>
-        { showStack && 
+        { showStack &&
           <div className="made-with-container">
             <Icon width={defaultWidth} height={defaultHeight} icon={htmlIcon} />
             <Icon width={defaultWidth} height={defaultHeight} icon={cssIcon} />
