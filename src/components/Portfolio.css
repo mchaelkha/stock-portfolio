@@ -1,0 +1,12 @@
+.Portfolio {
+  margin: 60px 4% 140px 4%;
+}
+
+table {
+  margin-top: 1%;
+  position: relative;
+}
+
+table * {
+  z-index: 50;
+}

@@ -1,0 +1,63 @@
+footer {
+  padding: 15px 0 5px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #e6fbff;
+  border: 1px;
+  border-top-style: solid;
+  z-index: 200;
+}
+
+footer a {
+  color: black;
+}
+
+.link-container, .footer-end {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1%;
+}
+
+#iex-cloud-logo {
+  width: 100px;
+}
+
+.show-stack-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.show-stack-container button {
+  margin-right: 1%;
+  vertical-align: center;
+}
+
+.made-with-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 3px 0;
+}
+
+.made-with-container > * {
+  padding: 0 3px;
+  vertical-align: center;
+}
+
+#fuse, #luxon, #axios {
+  padding: 2px 4px 0 4px;
+  font-size: 11pt;
+  height: 22px;
+}
+
+#lodash {
+  padding-top: 2px;
+}
+
+.footer-end {
+  margin-top: 5px;
+  padding-bottom: 5px;
+  height: 30px;
+}
