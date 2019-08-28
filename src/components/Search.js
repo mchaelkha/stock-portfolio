@@ -162,7 +162,6 @@ export default function Search({add, exchanges}) {
       <form ref={searchForm} onKeyPress={(e) => {
         if (e.key === 'Enter') {
           const activeEl = document.activeElement;
-          console.log();
           if (activeEl.tagName === 'LI' && activeEl.children.length > 0 &&
               activeEl.children[0].tagName === 'B') {
             const sym = activeEl.children[0].innerHTML;
@@ -171,7 +170,7 @@ export default function Search({add, exchanges}) {
           e.preventDefault();
         }
       }}
-        onSubmit={(e) => { return false; }}
+        onSubmit={(e) => {return false}}
       >
         <input ref={searchBar} type="search"
           defaultValue={query} placeholder={defaultPlaceHolder}

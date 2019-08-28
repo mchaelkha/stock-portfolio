@@ -37,7 +37,7 @@ export default function PortfolioFooter() {
               icon={gitHubIcon} />
           </a>
           <IconButton size="small" onClick={() => {setShowStack(showStack ? false : true)}}>
-            { showStack ?
+            {showStack ?
               <ArrowDropUp /> : <ArrowDropDown />
             }
           </IconButton>
@@ -45,7 +45,7 @@ export default function PortfolioFooter() {
       </div>
       <div className="footer-end">
         <span>&copy; 2019 Michael Kha. All Rights Reserved.</span>
-        { showStack &&
+        {showStack && (
           <div className="made-with-container">
             <Icon width={defaultWidth} height={defaultHeight} icon={htmlIcon} />
             <Icon width={defaultWidth} height={defaultHeight} icon={cssIcon} />
@@ -62,7 +62,7 @@ export default function PortfolioFooter() {
             <Icon width={defaultWidth} height={defaultHeight} icon={materialDesignIcon} />
             <Icon width={defaultWidth} height={defaultHeight} icon={simpleIconsIcon} />
           </div>
-        }
+        )}
       </div>
     </footer>
   )

@@ -65,20 +65,20 @@ export default function MenuBar({exchanges, setExchanges}) {
           <Settings />
         </IconButton>
       </div>
-      { showMenu &&
+      {showMenu && (
         <div className="left-menu-bar">
           <a href="https://github.com/mxk5025/Stock-Portfolio#stock-portfolio"
             target="_blank" rel="noopener noreferrer">
             About
           </a>
           <span id="help" onClick={handleHelpClick}>
-            { showHelp ? altHelpText : defaultHelpText }
+            {showHelp ? altHelpText : defaultHelpText}
           </span>
-          { showHelp &&
+          {showHelp && (
             <div className="text-container">
               <p id="help-text">{defaultHelpDescription}</p>
             </div>
-          }
+          )}
           <a href="https://github.com/mxk5025/Stock-Portfolio/issues"
             target="_blank" rel="noopener noreferrer">
             Feedback
@@ -88,15 +88,15 @@ export default function MenuBar({exchanges, setExchanges}) {
             Contact
           </a>
         </div>
-      }
-      { showSettings &&
+      )}
+      {showSettings &&
         <div className="right-settings-bar">
           <FormControl component="fieldset">
             <FormLabel component="legend" onClick={handleExchangeClick}
-              style={{ padding: '10px 5px', color: '#000', cursor: 'pointer' }}>
-              { showExchanges ? altExchangeText : defaultExchangeText }
+              style={{padding: '10px 5px', color: '#000', cursor: 'pointer' }}>
+              {showExchanges ? altExchangeText : defaultExchangeText}
             </FormLabel>
-            { showExchanges &&
+            {showExchanges && (
               <FormGroup onChange={handleCheckChange}
                 style={
                   {
@@ -111,24 +111,22 @@ export default function MenuBar({exchanges, setExchanges}) {
                   }
                 }
               >
-                {
-                  availableExchanges.map(ex =>
-                    <FormControlLabel
-                      key={ex}
-                      value={ex}
-                      label={ex}
-                      labelPlacement="end"
-                      checked={exchanges.includes(ex)}
-                      control={
-                        <Checkbox color={ex === 'NAS' || ex === 'NYS' ?
-                          'secondary' : 'primary'} style={{ fontSize: '10pt' }}
-                        />
-                      }
-                    />
-                  )
-                }
+                {availableExchanges.map(ex =>
+                  <FormControlLabel
+                    key={ex}
+                    value={ex}
+                    label={ex}
+                    labelPlacement="end"
+                    checked={exchanges.includes(ex)}
+                    control={
+                      <Checkbox color={ex === 'NAS' || ex === 'NYS' ?
+                        'secondary' : 'primary'} style={{fontSize: '10pt'}}
+                      />
+                    }
+                  />
+                )}
               </FormGroup>
-            }
+            )}
           </FormControl>
         </div>
       }

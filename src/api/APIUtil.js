@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { DateTime } from 'luxon'; // convert local dates to EST
+import {DateTime} from 'luxon'; // convert local dates to EST
 
 const refUrl = 'https://cloud.iexapis.com/stable/ref-data/symbols';
 const exchangeUrl = 'https://cloud.iexapis.com/stable/ref-data/market/us/exchanges'

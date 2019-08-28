@@ -13,19 +13,19 @@ import _ from 'lodash'; // unique array (uniqBy), stable sort (orderBy)
 import './Portfolio.css';
 
 const headerRows = [
-  { id: 'companyName', numeric: false, label: 'Name' },
-  { id: 'symbol', numeric: false, label: 'Symbol' },
-  { id: 'open', numeric: true, label: 'Open' },
-  { id: 'close', numeric: true, label: 'Close' },
-  { id: 'latestPrice', numeric: true, label: 'Current' },
-  { id: 'change', numeric: true, label: 'Change' },
-  { id: 'high', numeric: true, label: 'High' },
-  { id: 'low', numeric: true, label: 'Low' },
-  { id: 'delete', numeric: false, label: '' },
+  {id: 'companyName', numeric: false, label: 'Name'},
+  {id: 'symbol', numeric: false, label: 'Symbol'},
+  {id: 'open', numeric: true, label: 'Open'},
+  {id: 'close', numeric: true, label: 'Close'},
+  {id: 'latestPrice', numeric: true, label: 'Current'},
+  {id: 'change', numeric: true, label: 'Change'},
+  {id: 'high', numeric: true, label: 'High'},
+  {id: 'low', numeric: true, label: 'Low'},
+  {id: 'delete', numeric: false, label: ''},
 ];
 
 function AdjustedTableHead(props) {
-  const { hasBody, order, orderBy, onRequestSort } = props;
+  const {hasBody, order, orderBy, onRequestSort} = props;
   const createSortHandler = property => event => {
     onRequestSort(property);
   };
@@ -34,22 +34,20 @@ function AdjustedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        {
-          headerRows.map(row => (
-            <TableCell
-              key={row.id}
-              align={row.numeric ? 'right' : 'left'}
+        {headerRows.map(row => (
+          <TableCell
+            key={row.id}
+            align={row.numeric ? 'right' : 'left'}
+          >
+            <TableSortLabel
+              active={orderBy === row.id}
+              direction={order}
+              onClick={createSortHandler(row.id)}
             >
-              <TableSortLabel
-                active={orderBy === row.id}
-                direction={order}
-                onClick={createSortHandler(row.id)}
-              >
-              {row.label}
-              </TableSortLabel>
-            </TableCell>
-          ))
-        }
+            {row.label}
+            </TableSortLabel>
+          </TableCell>
+        ))}
       </TableRow>
     </TableHead>
   );
@@ -63,16 +61,14 @@ AdjustedTableHead.propTypes = {
 };
 
 function AdjustedTableBody(props) {
-  const { stocks, order, orderBy, remove } = props;
+  const {stocks, order, orderBy, remove} = props;
   var stocksCopy = [...stocks];
   stocksCopy = _.orderBy(stocksCopy, orderBy, order)
   return (
     <TableBody>
-      {
-        stocksCopy.map(
-          stock => <Stock key={stock.symbol} stock={stock} remove={remove} />
-        )
-      }
+      {stocksCopy.map(
+        stock => <Stock key={stock.symbol} stock={stock} remove={remove} />
+      )}
     </TableBody>
   );
 }
@@ -92,7 +88,7 @@ export default function Portfolio({exchanges}) {
   const add = (stock) => {
     var result = _.uniqBy([...stocks, stock], 'symbol');
     setStocks(result);
-  }
+  };
 
   const remove = (stock) => {
     var stocksCopy = [...stocks];
@@ -104,13 +100,13 @@ export default function Portfolio({exchanges}) {
       }
     }
     setStocks(stocksCopy);
-  }
+  };
 
   const handleRequestSort = (property) => {
     const isDesc = orderBy === property && order === 'desc';
     setOrder(isDesc ? 'asc' : 'desc');
     setOrderBy(property);
-  }
+  };
 
   return (
     <div className="Portfolio">
