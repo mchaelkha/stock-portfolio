@@ -1,80 +1,74 @@
 # Stock Portfolio
 
-One Paragraph of project description goes here
+React application connecting to IEX Cloud API endpoints to procure and
+tabularize stock information. Search for stocks by ticker or company name and
+dynamically modify the table. Learned and researched asynchronous JavaScript
+and React hooks, while employing open-source libraries. Focused on UI design
+and presentation for ease of use by adding interactive menus.
 
-## Getting Started
+## Installation
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Install node.js, add to path.
 
-### Prerequisites
+Install git, add to path.
 
-What things you need to install the software and how to install them
+Install yarn depending on your OS.
 
+then
 ```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
+git clone https://github.com/mxk5025/stock-portfolio.git
+cd stock-portfolio
 ```
 
-And repeat
-
+If using npm
 ```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+npm install
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
+If using yarn
 ```
-Give an example
+yarn
 ```
 
-## Deployment
+## Running in dev mode
 
-Add additional notes about how to deploy this on a live system
+Create a .env file at the top directory and initialize REACT_APP_STOCK_API_KEY.
+An API key can be received at https://iexcloud.io/ by creating a free account.
+```
+REACT_APP_STOCK_API_KEY=YOUR_KEY
+```
+
+To run a development server:
+
+If using npm
+```
+npm start
+```
+
+If using yarn
+```
+yarn start
+```
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+
+* [IEX Cloud](https://iexcloud.io/) - financial data endpoints.
+* [React](https://reactjs.org/) - JavaScript UI library.
+* [Fuse.js](https://fusejs.io/) - fuzzy-search library.
+* [axios](https://github.com/axios/axios) - HTTP client.
+* [luxon](https://moment.github.io/luxon/) - Wrapper for JavaScript dates and times.
+* [Lodash](https://lodash.com/) - JavaScript utility library.
+* [MaterialUI](https://material-ui.com/) - React component library.
+* [Simple Icons](https://simpleicons.org) - SVG icons for popular brands.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+Please read [CONTRIBUTING.md](https://github.com/mxk5025/stock-portfolio/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Michael Kha** - *creator* - [mxk5025](https://github.com/mxk5025)
 
 ## License
 
