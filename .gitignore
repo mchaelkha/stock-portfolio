@@ -4,3 +4,4 @@ t*.md
 
 # Directories
 node_modules/
+build/
