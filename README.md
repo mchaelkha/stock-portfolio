@@ -72,4 +72,4 @@ Please read [CONTRIBUTING.md](https://github.com/mxk5025/stock-portfolio/blob/ma
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
