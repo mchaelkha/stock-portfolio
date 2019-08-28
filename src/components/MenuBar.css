@@ -25,9 +25,17 @@
 }
 
 .left-menu-bar a, #help {
-  padding: 10px;
+  padding: 20px 10px;
   color: inherit;
   text-decoration: none;
+  border: 1px;
+  border-bottom-style: solid;
+}
+
+.left-menu-bar a:first-of-type {
+  border: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
 }
 
 .left-menu-bar a:hover, #help:hover {
@@ -38,6 +46,8 @@
 .text-container {
   padding: 0 10%;
   background-color: #d7e9ed;
+  border: 1px;
+  border-bottom-style: solid;
 }
 
 #help-text {
