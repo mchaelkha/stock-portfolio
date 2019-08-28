@@ -20,6 +20,8 @@
     "yarn": "^1.17.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -33,5 +35,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "homepage": "http://khacoding.com/Stock-Portfolio",
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
+  }
 }
