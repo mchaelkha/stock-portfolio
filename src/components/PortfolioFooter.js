@@ -24,9 +24,18 @@ export default function PortfolioFooter() {
   return (
     <footer>
       <div className="link-container">
-        <a href="https://iexcloud.io" target="_blank" rel="noopener noreferrer"><img id="iex-cloud-logo" src={iexCloudLogo} alt="" /></a>
+        <div className="powered-container">
+          <b>Powered by &nbsp;</b>
+          <a href="https://iexcloud.io" target="_blank" rel="noopener noreferrer">
+            <img id="iex-cloud-logo" src={iexCloudLogo} alt="" />
+            </a>
+        </div>
         <div className="show-stack-container">
-          <a href="https://github.com/mxk5025/Stock-Portfolio" target="_blank" rel="noopener noreferrer"><Icon width={defaultWidth} height={defaultHeight} icon={gitHubIcon} /></a>
+          <a href="https://github.com/mxk5025/Stock-Portfolio" target="_blank"
+            rel="noopener noreferrer">
+            <Icon width={defaultWidth}  height={defaultHeight}
+              icon={gitHubIcon} />
+          </a>
           <IconButton size="small" onClick={() => {setShowStack(showStack ? false : true)}}>
             { showStack ?
               <ArrowDropUp /> : <ArrowDropDown />
@@ -40,13 +49,16 @@ export default function PortfolioFooter() {
           <div className="made-with-container">
             <Icon width={defaultWidth} height={defaultHeight} icon={htmlIcon} />
             <Icon width={defaultWidth} height={defaultHeight} icon={cssIcon} />
-            <Icon width={defaultWidth} height={defaultHeight} icon={javaScriptIcon} />
+            <Icon width={defaultWidth} height={defaultHeight}
+              icon={javaScriptIcon} />
             <Icon width={defaultWidth} height={defaultHeight} icon={nodeIcon} />
-            <Icon width={defaultWidth} height={defaultHeight} icon={reactIcon} />
+            <Icon width={defaultWidth} height={defaultHeight}
+              icon={reactIcon} />
             <span id="fuse">Fuse.js</span>
             <span id="axios">axios</span>
             <span id="luxon">Luxon</span>
-            <img id="lodash" width={defaultWidth} height={defaultHeight} src={lodashLogo} alt="" />
+            <img id="lodash" width={defaultWidth} height={defaultHeight}
+              src={lodashLogo} alt="" />
             <Icon width={defaultWidth} height={defaultHeight} icon={materialDesignIcon} />
             <Icon width={defaultWidth} height={defaultHeight} icon={simpleIconsIcon} />
           </div>

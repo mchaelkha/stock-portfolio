@@ -19,7 +19,7 @@ async function update(sym, add) {
   let response = await util.makeDataRequest(sym);
   let data = response.data;
 
-  // Fill in missing data (see issue: https://github.com/iexg/IEX-API/issues/1116)
+  // Missing data (see issue: https://github.com/iexg/IEX-API/issues/1116)
   let prev = await util.getPrevious(sym);
   let quote = await util.getQuote(sym);
   data.open = isNullOrUndefined(data.open) ? prev.data.open : data.open;
@@ -27,19 +27,22 @@ async function update(sym, add) {
   data.close = isNullOrUndefined(data.close) ? prev.data.close : data.close;
   data.low = isNullOrUndefined(data.low) ? prev.data.low : data.low;
   data.change = isNullOrUndefined(data.change) ? prev.data.change : data.change;
-  data.changePercent = isNullOrUndefined(data.changePercent) ? prev.data.changePercent : data.changePercent
-  data.companyName = isNullOrUndefined(data.companyName) ? quote.data.companyName : data.companyName;
-  data.latestPrice = isNullOrUndefined(data.latestPrice) ? quote.data.latestPrice : data.latestPrice;
+  data.changePercent = isNullOrUndefined(data.changePercent) ?
+                        prev.data.changePercent : data.changePercent
+  data.companyName = isNullOrUndefined(data.companyName) ?
+                      quote.data.companyName : data.companyName;
+  data.latestPrice = isNullOrUndefined(data.latestPrice) ?
+                      quote.data.latestPrice : data.latestPrice;
 
   // If still missing values
-  if (isNullOrUndefined(data.open) || isNullOrUndefined(data.high) ||
-      isNullOrUndefined(data.close) || isNullOrUndefined(data.low) ||
-      isNullOrUndefined(data.companyName) || isNullOrUndefined(data.latestPrice) ||
-      isNullOrUndefined(data.change) || isNullOrUndefined(data.changePercent)) {
-    // console.log(prev.data);
-    // console.log(quote.data);
-    console.log("[INFO] Unavailable; missing some data.");
-  }
+  // if (isNullOrUndefined(data.open) || isNullOrUndefined(data.high) ||
+  //     isNullOrUndefined(data.close) || isNullOrUndefined(data.low) ||
+  //     isNullOrUndefined(data.companyName) || isNullOrUndefined(data.latestPrice) ||
+  //     isNullOrUndefined(data.change) || isNullOrUndefined(data.changePercent)) {
+  //   // console.log(prev.data);
+  //   // console.log(quote.data);
+  //   console.log("[INFO] Unavailable; missing some data.");
+  // }
   add(data, true);
 }
 
@@ -71,7 +74,6 @@ const SearchItem = ({name, sym, add, hide}) => (
       update(sym, add);
       hide();
     }}
-
   >
   <b>{sym}</b> - {name}
   </li>
@@ -161,7 +163,8 @@ export default function Search({add, exchanges}) {
         if (e.key === 'Enter') {
           const activeEl = document.activeElement;
           console.log();
-          if (activeEl.tagName === 'LI' && activeEl.children.length > 0 && activeEl.children[0].tagName === 'B') {
+          if (activeEl.tagName === 'LI' && activeEl.children.length > 0 &&
+              activeEl.children[0].tagName === 'B') {
             const sym = activeEl.children[0].innerHTML;
             update(sym, add);
           }

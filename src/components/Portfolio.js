@@ -9,7 +9,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
-import _ from 'lodash'; // unique array (uniqBy), stable sort with ascending and descending (orderBy)
+import _ from 'lodash'; // unique array (uniqBy), stable sort (orderBy)
 import './Portfolio.css';
 
 const headerRows = [
@@ -36,7 +36,7 @@ function AdjustedTableHead(props) {
       <TableRow>
         {
           headerRows.map(row => (
-            <TableCell 
+            <TableCell
               key={row.id}
               align={row.numeric ? 'right' : 'left'}
             >
@@ -70,10 +70,10 @@ function AdjustedTableBody(props) {
     <TableBody>
       {
         stocksCopy.map(
-          stock => <Stock key={stock.symbol} stock={stock} remove={remove} /> 
+          stock => <Stock key={stock.symbol} stock={stock} remove={remove} />
         )
       }
-    </TableBody> 
+    </TableBody>
   );
 }
 

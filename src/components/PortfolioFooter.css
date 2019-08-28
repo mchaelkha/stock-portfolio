@@ -20,6 +20,14 @@ footer a {
   margin: 0 1%;
 }
 
+.powered-container {
+  display: flex;
+}
+
+.powered-container b {
+  font-size: 12pt;
+}
+
 #iex-cloud-logo {
   width: 100px;
 }

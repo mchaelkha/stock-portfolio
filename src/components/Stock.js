@@ -32,7 +32,7 @@ export default function Stock({stock, remove}) {
         </TableCell>
         <TableCell>{stock.symbol}</TableCell>
         <TableCell align="right">{
-            stock.open ? toTwoDecimalPlaces(stock.open) : '–' 
+            stock.open ? toTwoDecimalPlaces(stock.open) : '–'
           }
         </TableCell>
         <TableCell align="right">{
@@ -43,11 +43,11 @@ export default function Stock({stock, remove}) {
             stock.latestPrice ? toTwoDecimalPlaces(stock.latestPrice) : '–'
           }
         </TableCell>
-        <TableCell align="right" style={{ 
-              'color': stock.change === 0 ? 'inherit' : 
-              stock.change > 0 ? 'green' : 'red' 
+        <TableCell align="right" style={{
+              'color': stock.change === 0 ? 'inherit' :
+              stock.change > 0 ? 'green' : 'red'
             }
-          } 
+          }
         >
           {changeToString(stock.change, stock.changePercent)}
         </TableCell>
