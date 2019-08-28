@@ -6,8 +6,9 @@ const exchangeUrl = 'https://cloud.iexapis.com/stable/ref-data/market/us/exchang
 const baseUrl = 'https://cloud.iexapis.com/stable/stock/';
 const previousEndPt = '/previous';
 const quoteEndPt = '/quote';
-const key = '?token=pk_71e4781bdacd4cd78f1ee15bc00905bd'; // production
-// const key = '?token=Tpk_5bcf53a955d74a3180145a8a95f69e8d'; // test
+const key = '?token=' + process.env.REACT_APP_STOCK_API_KEY; // production
+
+console.log(key);
 
 export default class APIUtil {
 
