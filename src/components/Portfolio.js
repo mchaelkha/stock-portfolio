@@ -94,7 +94,6 @@ export default function Portfolio({exchanges}) {
     setStocks(result);
   }
 
-  // TODO: test
   const remove = (stock) => {
     var stocksCopy = [...stocks];
     for (var i = stocksCopy.length - 1; i >= 0; i--) {
