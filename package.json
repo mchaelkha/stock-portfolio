@@ -1,7 +1,9 @@
 {
-  "name": "runner",
-  "version": "0.1.0",
+  "name": "stock-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "license": "MIT",
+  "author": "Michael Kha",
   "dependencies": {
     "@iconify/icons-simple-icons": "^1.0.6",
     "@iconify/react": "^1.1.1",
@@ -36,7 +38,8 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage": "http://khacoding.com/stock-portfolio",
+  "homepage": "https://khacoding.com/stock-portfolio",
+  "bugs": "https://github.com/mxk5025/stock-portfolio/issues",
   "devDependencies": {
     "gh-pages": "^2.1.1"
   }
