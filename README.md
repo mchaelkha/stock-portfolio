@@ -6,6 +6,8 @@ dynamically modify the table. Learned and researched asynchronous JavaScript
 and React hooks, while employing open-source libraries. Focused on UI design
 and presentation for ease of use by adding interactive menus.
 
+![](doc/images/sample.png);
+
 ## Installation
 
 Install node.js, add to path.
@@ -52,7 +54,6 @@ yarn start
 
 ## Built With
 
-
 * [IEX Cloud](https://iexcloud.io/) - financial data endpoints.
 * [React](https://reactjs.org/) - JavaScript UI library.
 * [Fuse.js](https://fusejs.io/) - fuzzy-search library.
@@ -66,10 +67,8 @@ yarn start
 
 Please read [CONTRIBUTING.md](https://github.com/mxk5025/stock-portfolio/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Authors
-
-* **Michael Kha** - *creator* - [mxk5025](https://github.com/mxk5025)
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+&copy; [Michael Kha](https://github.com/mxk5025)
