@@ -43,7 +43,7 @@ async function update(sym, add) {
   //   // console.log(quote.data);
   //   console.log("[INFO] Unavailable; missing some data.");
   // }
-  add(data, true);
+  add(data);
 }
 
 async function receiveReferenceData() {
