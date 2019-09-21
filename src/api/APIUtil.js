@@ -8,8 +8,6 @@ const previousEndPt = '/previous';
 const quoteEndPt = '/quote';
 const key = '?token=' + process.env.REACT_APP_STOCK_API_KEY; // production
 
-console.log(key);
-
 export default class APIUtil {
 
   async get(url) {
