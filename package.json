@@ -38,7 +38,7 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage": "https://khacoding.com/stock-portfolio",
+  "homepage": "https://michael-kha.com/stock-portfolio",
   "bugs": "https://github.com/mxk5025/stock-portfolio/issues",
   "devDependencies": {
     "gh-pages": "^2.1.1"
